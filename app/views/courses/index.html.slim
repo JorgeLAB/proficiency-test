@@ -1,14 +1,17 @@
-h1= translate_title_of_index_page
+h1
+  = translate_title_of_index_page
+  = link_to t('page_content.actions.new', { resource: current_resource_in_singular } ), new_course_path,
+      class: "btn btn-primary pull-right"
 
-table
+table.table
   thead
     tr
       th= t("#{current_active_record_attribute}.name")
       th= t("#{current_active_record_attribute}.description")
       th= t("#{current_active_record_attribute}.status")
-      th
-      th
-      th
+      th style="width: 5%"
+      th style="width: 5%"
+      th style="width: 5%"
 
   tbody
     - @courses.each do |course|
@@ -16,11 +19,9 @@ table
         td = course.name
         td = course.description
         td = course.status_humanize
-        td = link_to translate_show_link, course
-        td = link_to translate_edit_link, edit_course_path(course)
-        td = link_to translate_destroy_link, course,
+        td = link_to '', course, class: "btn btn-xs btn-default glyphicon glyphicon-eye-open"
+        td = link_to '', edit_course_path(course), class: "btn btn-xs btn-primary glyphicon glyphicon-pencil"
+        td = link_to '', course, class: "btn btn-xs btn-danger glyphicon glyphicon-trash", 
                 data: {:confirm => t('page_content.messages.destroy_confirmation')}, :method => :delete
 
 br
-
-= link_to t('page_content.actions.new', { resource: current_resource_in_singular } ), new_course_path

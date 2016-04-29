@@ -1,6 +1,7 @@
 h1= translate_title_of_show_page
 
-p#notice = notice
+- if notice.present?
+  p#notice.alert.alert-success = flash[:notice]
 
 p
   strong = t("#{current_active_record_attribute}.name") + ": "
@@ -12,6 +13,8 @@ p
   strong = t("#{current_active_record_attribute}.status") + ": "
   = @course.status_humanize
 
-= link_to translate_edit_link, edit_course_path(@course)
-'|
-= link_to translate_back_link, courses_path
+br
+
+= link_to translate_edit_link, edit_course_path(@course), class: "btn btn-default"
+= " "
+= link_to translate_back_link, courses_path, class: "btn btn-default"
