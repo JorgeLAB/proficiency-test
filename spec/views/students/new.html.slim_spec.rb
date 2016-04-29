@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "students/new", type: :view do
   before(:each) do
-    assign(:student, Student.new(
-      :name => "MyString",
-      :register_number => "MyString",
-      :status => 1
-    ))
+    assign(:student, build(:student))
   end
 
   it "renders new student form" do

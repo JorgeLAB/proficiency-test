@@ -1,25 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe "students/index", type: :view do
+  let(:students) { create_list(:student, 2) }
+
   before(:each) do
-    assign(:students, [
-      Student.create!(
-        :name => "Name",
-        :register_number => "Register Number",
-        :status => 1
-      ),
-      Student.create!(
-        :name => "Name",
-        :register_number => "Register Number",
-        :status => 1
-      )
-    ])
+    assign(:students, students )
   end
 
   it "renders a list of students" do
     render
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Register Number".to_s, :count => 2
-    assert_select "tr>td", :text => 1.to_s, :count => 2
+    assert_select "tr>td", :text => students[0][:name].to_s, :count => 1
+    assert_select "tr>td", :text => students[0][:register_number].to_s, :count => 1
+    assert_select "tr>td", :text => students[1][:name].to_s, :count => 1
+    assert_select "tr>td", :text => students[1][:register_number].to_s, :count => 1
+    assert_select "tr>td", :text => students[0][:status].to_s, :count => 2
   end
 end

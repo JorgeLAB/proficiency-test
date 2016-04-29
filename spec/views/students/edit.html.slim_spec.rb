@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "students/edit", type: :view do
   before(:each) do
-    @student = assign(:student, Student.create!(
-      :name => "MyString",
-      :register_number => "MyString",
-      :status => 1
-    ))
+    @student = assign(:student, create(:student))
   end
 
   it "renders the edit student form" do
