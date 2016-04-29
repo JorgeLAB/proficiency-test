@@ -1,0 +1,30 @@
+doctype html
+
+html
+  head
+    title ProficiencyTest
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+
+  div.container
+    nav.navbar.navbar-inverse.row
+      div.container-fluid
+        div.navbar-header
+          a.navbar-brand href="/" Proficiency Test
+        div#navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a href="/" Home
+            li
+              a href="#{students_path}" Students
+            li
+              a href="#{courses_path}" Courses
+            li
+              a href="#{classrooms_path}" Classrooms
+
+    div.container
+      div.row
+        = yield

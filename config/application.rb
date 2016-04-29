@@ -39,5 +39,7 @@ module ProficiencyTest
     end
 
     config.autoload_paths << Rails.root.join("app/enumerations/*.rb")
+
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
