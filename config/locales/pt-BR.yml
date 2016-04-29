@@ -27,8 +27,8 @@ pt-BR:
         one: Curso
         other: Cursos
       classroom:
-        one: Sala de Aula
-        other: Salas de Aula
+        one: Turma
+        other: Turmas
     attributes:
       student:
         name: Nome
