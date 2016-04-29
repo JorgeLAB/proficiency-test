@@ -1,8 +1,7 @@
-h1 Editing student
+h1 = t('page_content.actions.edit', { resource: current_resource_in_singular } )
 
 == render 'form'
 
-= link_to 'Show', @student
+= link_to translate_show_link, @student
 '|
-= link_to 'Back', students_path
-
+= link_to translate_back_link, students_path

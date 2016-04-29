@@ -1,11 +1,11 @@
-h1 Listing students
+h1= t('page_content.actions.list', { resource: current_resource_in_plural } )
 
 table
   thead
     tr
-      th Name
-      th Register number
-      th Status
+      th= t("#{current_active_record_attribute}.name")
+      th= t("#{current_active_record_attribute}.register_number")
+      th= t("#{current_active_record_attribute}.status")
       th
       th
       th
@@ -16,10 +16,11 @@ table
         td = student.name
         td = student.register_number
         td = student.status
-        td = link_to 'Show', student
-        td = link_to 'Edit', edit_student_path(student)
-        td = link_to 'Destroy', student, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to translate_show_link, student
+        td = link_to translate_edit_link, edit_student_path(student)
+        td = link_to translate_destroy_link, student,
+                data: {:confirm => t('page_content.messages.destroy_confirmation')}, :method => :delete
 
 br
 
-= link_to 'New Student', new_student_path
+= link_to t('page_content.actions.new', { resource: current_resource_in_singular } ), new_student_path
