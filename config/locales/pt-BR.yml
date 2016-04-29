@@ -9,6 +9,9 @@ pt-BR:
       back: Voltar
     messages:
       destroy_confirmation: "Tem certeza?"
+      not_saved:
+        one: "Ocorreu 1 erro que impediu o %{model} de ser salvo:"
+        other: "Ocorreu %{count} erros que impediram o %{model} de ser salvo:"
   activerecord:
     errors:
       messages:

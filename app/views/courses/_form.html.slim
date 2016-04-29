@@ -1,8 +1,7 @@
 = form_for @course do |f|
   - if @course.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@course.errors.count, "error")} prohibited this course from being saved:"
-      ul
+      h2 = not_saved_message(@course.errors.count)
         - @course.errors.full_messages.each do |message|
           li = message
 

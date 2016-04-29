@@ -3,6 +3,12 @@ module ApplicationHelper
   @links_translate = [:show, :edit, :back, :destroy]
   @titles_translate = [:show, :edit, :index, :new]
 
+  def not_saved_message(errors_count)
+    model_translate = t("activerecord.models.#{controller_name.singularize}.one").downcase
+    return t("page_content.messages.not_saved.one", model: model_translate ) if errors_count <= 1
+    t("page_content.messages.not_saved.other", count: errors_count, model: model_translate)
+  end
+
   def current_resource_in_singular
     t("activerecord.models.#{controller_name.singularize}.one")
   end
