@@ -19,6 +19,20 @@ RSpec.describe ClassroomsController, type: :controller do
     end
   end
 
+  describe "GET #show" do
+    let(:classroom) { create :classroom }
+
+    it "assigns a @classroom" do
+      get :show, id: classroom.id
+      expect(assigns(:classroom)).to eq(classroom)
+    end
+
+    it "renders :show template" do
+      get :show, id: classroom.id
+      expect(response).to render_template :show
+    end
+  end
+
   describe "GET #new" do
     it "assigns a new @classroom" do
       get :new
@@ -55,7 +69,7 @@ RSpec.describe ClassroomsController, type: :controller do
           post :create, classroom: invalid_attributes
         }.to_not change(Classroom, :count)
       end
-      
+
     end
   end
 

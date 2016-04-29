@@ -5,6 +5,11 @@ class ClassroomsController < ApplicationController
     respond_with(@classrooms)
   end
 
+  def show
+    @classroom = Classroom.find(params[:id])
+    respond_with(@clasroom)
+  end
+
   def new
     @classroom = Classroom.new
     respond_with(@classroom)

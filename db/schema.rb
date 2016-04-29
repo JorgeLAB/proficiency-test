@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160429083947) do
   create_table "classrooms", force: :cascade do |t|
     t.integer  "student_id",                                 null: false
     t.integer  "course_id",                                  null: false
-    t.datetime "entry_at",   default: '2016-04-29 15:48:35'
+    t.datetime "entry_at",   default: '2016-04-29 16:36:58'
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
   end

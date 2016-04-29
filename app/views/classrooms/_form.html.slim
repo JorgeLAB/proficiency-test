@@ -1,0 +1,14 @@
+= form_for @classroom do |f|
+  - if @classroom.errors.any?
+    #error_explanation
+      h2 = not_saved_message(@classroom.errors.count)
+        - @classroom.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :student
+    = f.select :student_id, options_for_select(Student.all.collect { |s| [s.name, s.id] } , @classroom[:student_id])
+  .field
+    = f.label :course
+    = f.select :course_id, options_for_select(Course.all.collect { |c| [c.name, c.id] }, @classroom[:course_id])
+  .actions = f.submit

@@ -26,6 +26,9 @@ pt-BR:
       course:
         one: Curso
         other: Cursos
+      classroom:
+        one: Sala de Aula
+        other: Salas de Aula
     attributes:
       student:
         name: Nome
@@ -35,6 +38,10 @@ pt-BR:
         name: Nome
         description: Descrição
         status: Status
+      classroom:
+        student: Aluno
+        course: Curso
+        entry_at: Data de registro
   date:
     abbr_day_names:
     - Dom
@@ -243,4 +250,5 @@ pt-BR:
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+      slashed: "%d/%m/%Y às %H:%M"
     pm: ''
