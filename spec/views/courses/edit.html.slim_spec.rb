@@ -14,7 +14,7 @@ RSpec.describe "courses/edit", type: :view do
 
       assert_select "textarea#course_description[name=?]", "course[description]"
 
-      assert_select "input#course_status[name=?]", "course[status]"
+      assert_select "select#course_status[name=?]", "course[status]"
     end
   end
 end

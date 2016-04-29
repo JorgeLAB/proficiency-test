@@ -13,6 +13,6 @@ RSpec.describe "students/index", type: :view do
     assert_select "tr>td", :text => students[0][:register_number].to_s, :count => 1
     assert_select "tr>td", :text => students[1][:name].to_s, :count => 1
     assert_select "tr>td", :text => students[1][:register_number].to_s, :count => 1
-    assert_select "tr>td", :text => students[0][:status].to_s, :count => 2
+    assert_select "tr>td", :text => Status.t(students[0][:status]), :count => 2
   end
 end

@@ -12,6 +12,6 @@ RSpec.describe "courses/index", type: :view do
     assert_select "tr>td", :text => courses[0][:name].to_s, :count => 1
     assert_select "tr>td", :text => courses[1][:name].to_s, :count => 1
     assert_select "tr>td", :text => courses[0][:description].to_s, :count => 2
-    assert_select "tr>td", :text => courses[0][:status].to_s, :count => 2
+    assert_select "tr>td", :text => Status.t(courses[0][:status]), :count => 2
   end
 end
