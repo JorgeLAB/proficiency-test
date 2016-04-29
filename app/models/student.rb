@@ -1,5 +1,7 @@
 class Student < ActiveRecord::Base
 
+  has_many :classrooms
+
   validates_presence_of [:name, :register_number]
   validates_numericality_of :status, { only_integer: true, greater_than_or_equal_to: 1 }
 
