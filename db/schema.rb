@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20160429011057) do
   enable_extension "plpgsql"
 
   create_table "students", force: :cascade do |t|
-    t.string   "name"
-    t.string   "register_number"
-    t.integer  "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "name",                        null: false
+    t.string   "register_number",             null: false
+    t.integer  "status",          default: 1
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
