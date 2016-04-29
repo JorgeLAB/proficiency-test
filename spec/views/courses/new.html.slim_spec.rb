@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "courses/new", type: :view do
   before(:each) do
-    assign(:course, Course.new(
-      :name => "MyString",
-      :description => "MyText",
-      :status => 1
-    ))
+    assign(:course, build(:course))
   end
 
   it "renders new course form" do
