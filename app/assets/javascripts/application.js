@@ -13,5 +13,10 @@
 //= require bootstrap
 //= require jquery
 //= require jquery_ujs
+//= require jquery-mask-plugin
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $("input[name='student[register_number]']").mask("999999999999999999999999999999");
+});

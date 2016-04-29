@@ -10,11 +10,11 @@
     div.col-md-4
       div.field.form-group
         = f.label :name
-        = f.text_field :name, class: "form-control"
+        = f.text_field :name, class: "form-control", required: true
 
       div.field.form-group
         = f.label :register_number
-        = f.text_field :register_number, class: "form-control"
+        = f.text_field :register_number, class: "form-control", required: true
 
       div.field.form-group
         = f.label :status
