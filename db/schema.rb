@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20160429083947) do
   enable_extension "plpgsql"
 
   create_table "classrooms", force: :cascade do |t|
-    t.integer  "student_id"
-    t.integer  "course_id"
-    t.datetime "entry_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "student_id",                                 null: false
+    t.integer  "course_id",                                  null: false
+    t.datetime "entry_at",   default: '2016-04-29 15:48:35'
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   add_index "classrooms", ["course_id"], name: "index_classrooms_on_course_id", using: :btree
