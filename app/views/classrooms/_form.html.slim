@@ -1,14 +1,21 @@
 = form_for @classroom do |f|
   - if @classroom.errors.any?
-    #error_explanation
-      h2 = not_saved_message(@classroom.errors.count)
+    div#error_explanation.alert.alert-danger
+      h4 = not_saved_message(@classroom.errors.count)
+      ul
         - @classroom.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :student
-    = f.select :student_id, options_for_select(Student.all.collect { |s| [s.name, s.id] } , @classroom[:student_id])
-  .field
-    = f.label :course
-    = f.select :course_id, options_for_select(Course.all.collect { |c| [c.name, c.id] }, @classroom[:course_id])
-  .actions = f.submit
+  div.row
+    div.col-md-4
+      div.field.form-group
+        = f.label :student
+        = f.select :student_id, options_for_select(Student.all.collect { |s| [s.name, s.id] } , @classroom[:student_id]),
+                   {}, class: "form-control"
+
+      div.field.form-group
+        = f.label :course
+        = f.select :course_id, options_for_select(Course.all.collect { |c| [c.name, c.id] }, @classroom[:course_id]),
+                   {}, class: "form-control"
+
+      .actions = f.submit class: "btn btn-primary"

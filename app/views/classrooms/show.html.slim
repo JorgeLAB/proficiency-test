@@ -1,6 +1,7 @@
 h1= translate_title_of_show_page
 
-p#notice = notice
+- if notice.present?
+  p#notice.alert.alert-success = flash[:notice]
 
 p
   strong = t("#{current_active_record_attribute}.student") + ": "
@@ -12,4 +13,6 @@ p
   strong = t("#{current_active_record_attribute}.entry_at") + ": "
   = l(@classroom.entry_at, format: t('time.formats.slashed'))
 
-= link_to translate_back_link, classrooms_path
+br
+
+= link_to translate_back_link, classrooms_path, class: "btn btn-default"
