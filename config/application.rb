@@ -37,5 +37,7 @@ module ProficiencyTest
       g.javascripts = false
       g.helper = false
     end
+
+    config.autoload_paths << Rails.root.join("app/enumerations/*.rb")
   end
 end

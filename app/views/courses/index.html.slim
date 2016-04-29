@@ -15,7 +15,7 @@ table
       tr
         td = course.name
         td = course.description
-        td = course.status
+        td = course.status_humanize
         td = link_to translate_show_link, course
         td = link_to translate_edit_link, edit_course_path(course)
         td = link_to translate_destroy_link, course,

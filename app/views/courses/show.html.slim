@@ -10,7 +10,7 @@ p
   = @course.description
 p
   strong = t("#{current_active_record_attribute}.status") + ": "
-  = @course.status
+  = @course.status_humanize
 
 = link_to translate_edit_link, edit_course_path(@course)
 '|

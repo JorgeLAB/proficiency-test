@@ -10,7 +10,7 @@ p
   = @student.register_number
 p
   strong = t("#{current_active_record_attribute}.status") + ": "
-  = @student.status
+  = @student.status_humanize
 
 = link_to translate_edit_link, edit_student_path(@student)
 '|

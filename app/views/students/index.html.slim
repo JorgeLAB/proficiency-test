@@ -15,7 +15,7 @@ table
       tr
         td = student.name
         td = student.register_number
-        td = student.status
+        td = student.status_humanize
         td = link_to translate_show_link, student
         td = link_to translate_edit_link, edit_student_path(student)
         td = link_to translate_destroy_link, student,

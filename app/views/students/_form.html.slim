@@ -14,5 +14,5 @@
     = f.text_field :register_number
   .field
     = f.label :status
-    = f.number_field :status
+    = f.select :status, options_for_select(Status.to_a, @student[:status])
   .actions = f.submit
