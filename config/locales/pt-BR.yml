@@ -20,10 +20,17 @@ pt-BR:
       student:
         one: Aluno
         other: Alunos
+      course:
+        one: Curso
+        other: Cursos
     attributes:
       student:
         name: Nome
         register_number: Número de matrícula
+        status: Status
+      course:
+        name: Nome
+        description: Descrição
         status: Status
   date:
     abbr_day_names:
@@ -163,7 +170,7 @@ pt-BR:
     select:
       prompt: Por favor selecione
     submit:
-      create: Criar %{model}
+      create: Cadastrar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
   number:

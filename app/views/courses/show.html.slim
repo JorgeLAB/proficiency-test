@@ -1,15 +1,17 @@
+h1= translate_title_of_show_page
+
 p#notice = notice
 
 p
-  strong Name:
+  strong = t("#{current_active_record_attribute}.name") + ": "
   = @course.name
 p
-  strong Description:
+  strong = t("#{current_active_record_attribute}.descriptions") + ": "
   = @course.description
 p
-  strong Status:
+  strong = t("#{current_active_record_attribute}.status") + ": "
   = @course.status
 
-= link_to 'Edit', edit_course_path(@course)
+= link_to translate_edit_link, edit_course_path(@course)
 '|
-= link_to 'Back', courses_path
+= link_to translate_back_link, courses_path
