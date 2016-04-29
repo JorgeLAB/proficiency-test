@@ -18,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 source "https://rails-assets.org" do
   gem "rails-assets-bootstrap", '~> 3.3'
+  gem 'rails-assets-jquery-mask-plugin', '~> 1.4'
 end
 
 group :development, :test do
